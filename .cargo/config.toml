@@ -8,3 +8,11 @@ rustflags = [
 
 [unstable]
 build-std = ["core"]
+
+[profile.release]
+strip = true
+lto = true
+codegen-units = 1
+opt-level = "z"
+# FIXME: Panic should probably start main cpu?
+panic = "abort"

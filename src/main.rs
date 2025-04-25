@@ -1,12 +1,12 @@
 #![no_std]
 #![no_main]
-#![feature(core_intrinsics, start)]
 
 use embedded_hal::blocking::delay::DelayMs;
 use embedded_hal::digital::v2::OutputPin;
 
 use esp_idf_hal::delay;
 use esp_idf_hal::prelude::*;
+use esp_idf_hal::gpio::*;
 
 extern crate panic_halt;
 
@@ -19,7 +19,7 @@ fn main() {
     let pins = peripherals.pins;
 
     let mut delay = delay::Ulp;
-    let mut led = pins.gpio4.into_output_od().unwrap();
+    let mut led = PinDriver::output(pins.gpio4).unwrap();
 
     while get_cycles() > 0 {
         led.set_high().unwrap();

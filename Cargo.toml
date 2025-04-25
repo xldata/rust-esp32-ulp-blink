@@ -2,7 +2,7 @@
 name = "rust-esp32-ulp-blink"
 version = "0.5.1"
 authors = ["ivmarkov"]
-edition = "2018"
+edition = "2021"
 resolver = "2"
 categories = ["embedded", "hardware-support"]
 keywords = ["embedded", "ulp", "esp32s2", "riscv"]
@@ -21,4 +21,4 @@ opt-level = "z"
 [dependencies]
 panic-halt = "0.2"
 embedded-hal = "0.2"
-esp-idf-hal = {version = "0.32.4", features = ["riscv-ulp-hal"], default-features = false }
+esp-idf-hal = {version = "0.41.2", features = ["riscv-ulp-hal"], default-features = false }
